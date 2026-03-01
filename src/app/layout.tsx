@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 
-const pretendard = localFont({
-  src: '../../public/fonts/PretendardVariable.woff2', // 폰트 파일 경로 설정
-  variable: '--font-pretendard', // css 변수명을 정의하여 Tailwind CSS 등에서 사용할 수 있음
+const poppins = Poppins({
+  weight: ['200', '400', '600'], // extra light, regular, semibold
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
 });
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={pretendard.variable}>
+    <html lang="ko" className={poppins.variable}>
       <body className="antialiased">{children}</body>
     </html>
   );
