@@ -1,7 +1,13 @@
+import Cards from '@/components/Cards';
+import Title from '@/components/Title';
+
 export default function Home() {
   return (
-    <div>
-      <h1>carokann template</h1>
-    </div>
+    <main>
+      <article className="flex flex-col items-center">
+        <Title />
+        <Cards />
+      </article>
+    </main>
   );
 }
